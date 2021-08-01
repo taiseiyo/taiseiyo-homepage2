@@ -15,28 +15,41 @@ li{
     }
 }
 
-.paper{    
+$sp: 414px; // スマホ
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.paper{
     h2{
 	margin: auto;  
     }
     text-align: center;
-    margin-bottom: 300px;
     position: relative;
     right: 20px;
-    display: -webkit-flex;
     display: flex;
-    -webkit-justify-content: flex-start;
     justify-content: flex-start;
-    -webkit-align-items: flex-start;
     align-items: flex-start;
-    -webkit-flex-direction: column;
     flex-direction: column;
     height: 200px;
+    font-size: 18px;
     li{
 	margin: auto;
 	padding: 10px;
     }
-   
+    padding-bottom: 350px;
+    @include sp{
+	padding-bottom: 550px;
+    }	   
 }
 
 .award{
